@@ -53,7 +53,7 @@ nav ul li a {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: url(background.jpg) center/cover no-repeat;
+    background: url(1.jpg) center/cover no-repeat;
     color: #fff;
     display: flex;
     flex-direction: column;
