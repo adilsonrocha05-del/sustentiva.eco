@@ -1,70 +1,138 @@
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
-body{background:#b9b9b9;color:#000000}
-header{background:#111;padding:15px;position:fixed;width:100%;top:0}
-nav{display:flex;justify-content:space-between;align-items:center}
-nav ul{list-style:none;display:flex}
-nav ul li{margin-left:20px}
-nav ul li a{color:#fff;text-decoration:none}
-.logo{color:#fff;font-weight:700}
-.logo span{color:#27ae60}
-.hero{height:100vh;background:url(coelho.jpg) center/cover no-repeat;00000;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-.btn{margin-top:20px;background:#27ae60;color:#fff;padding:15px 30px;text-decoration:none;border-radius:5px}
-section{padding:100px 20px;text-align:center}
-footer{background:#111;color:#777;text-align:center;padding:30px}
-
-
-.logo-watermark {
-  position: fixed;
-  bottom:-50px;
-  right: 20px;
-  width: 90px;
-  opacity: 0.66;
-  z-index: 9999;
-  pointer-events: none;
-}.logo-watermark {
-  max-width: 90px;
-  height: auto;
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
-@media (max-width: 768px) {
-  nav ul {
-    gap:-20px; diminui espaço entre os itens */
-  }
-
-  nav ul li a {
-    font-size: 13px; /* reduz o tamanho da letra */
-    padding: 6px 8px;
-  }
+body {
+    background: #b9b9b9;
+    color: #000000;
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: white;
+/* Header and Navigation */
+header {
+    background: #111;
     padding: 15px;
-    border-radius: 8px;
-  }
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
 
-  nav ul.active {
+nav {
     display: flex;
-  }
+    justify-content: space-between;
+    align-items: center;
+}
 
-  .menu-toggle {
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
     color: #fff;
-    display: block;
-    position: absolute;
-    top: 5px;
+    text-decoration: none;
+}
+
+.logo {
+    color: #fff;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #27ae60;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url(coelho.jpg) center/cover no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn {
+    margin-top: 20px;
+    background: #27ae60;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Sections */
+section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: #777;
+    text-align: center;
+    padding: 30px;
+}
+
+/* Other elements */
+.logo-watermark {
+    position: fixed;
+    bottom: -50px;
     right: 20px;
-  }
+    width: 90px;
+    height: auto;
+    opacity: 0.66;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+        padding: 6px 8px;
+        color: #333; /* Change color for better visibility on white background */
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 20px;
+    }
 }
