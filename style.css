@@ -44,6 +44,7 @@ nav ul li a {
 .logo {
     color: #fff;
     font-weight: 700;
+    transition: filter 0.3s ease;
 }
 
 .logo span {
@@ -83,6 +84,8 @@ footer {
     color: #777;
     text-align: center;
     padding: 30px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Other elements */
@@ -90,11 +93,16 @@ footer {
     position: fixed;
     bottom: -50px;
     right: 20px;
-    width: 90px;
+    width: 60px; /* Reduced size */
     height: auto;
     opacity: 0.66;
     z-index: 9999;
     pointer-events: none;
+    transition: filter 0.3s ease, width 0.3s ease;
+}
+
+footer:hover ~ .logo-watermark {
+    filter: brightness(0) invert(1);
 }
 
 /* Hamburger Menu */
@@ -136,3 +144,23 @@ footer {
         right: 20px;
     }
 }
+
+/* JavaScript-based intersection detection */
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const logo = document.querySelector('.logo-watermark');
+    const footer = document.querySelector('footer');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          logo.style.filter = 'brightness(0) invert(1)';
+        } else {
+          logo.style.filter = 'none';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(footer);
+  });
+</script>

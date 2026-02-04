@@ -108,8 +108,32 @@ projetos arquitetônicos, construção de chalés, hospedagem, cursos práticos 
     });
   });
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const logo = document.querySelector('.logo-watermark');
+    const footer = document.querySelector('footer');
+
+    function checkOverlap() {
+      const logoRect = logo.getBoundingClientRect();
+      const footerRect = footer.getBoundingClientRect();
+
+      if (
+        logoRect.bottom > footerRect.top &&
+        logoRect.top < footerRect.bottom &&
+        logoRect.right > footerRect.left &&
+        logoRect.left < footerRect.right
+      ) {
+        logo.style.filter = 'brightness(0) invert(1)';
+      } else {
+        logo.style.filter = 'none';
+      }
+    }
+
+    window.addEventListener('scroll', checkOverlap);
+    window.addEventListener('resize', checkOverlap);
+    checkOverlap();
+  });
+</script>
 
 </body>
 </html>
-
-</body>
