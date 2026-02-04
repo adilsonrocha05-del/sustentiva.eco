@@ -1,139 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head><link rel="stylesheet" href="style.css">
-
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Sustentiva Eco Homes</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustentiva Eco Homes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-
-<header>
-
-  <script>
-  const toggle = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('nav ul');
-
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-  });
-</script>
-<body>
-  
-</body>
-<nav>
-  
-<div class="logo">SUSTENTIVA <span>ECO HOMES</span></div>
-
-
-<div class="menu-toggle">☰</div>
-
-<ul>
-  
-<li><a href="#inicio">Início</a></li> 
-<li><a href="#construcoes">Construções</a></li>
-<li><a href="#ecossistema">Ecossistema</a></li>
-<li><a href="#contato">Contato</a></li>y
-</ul>
-</nav>
-</header>
-
-<section id="inicio" class="hero">
-<h1>Construindo o futuro em madeira</h1>
-<p>Chalés A-Frame • Cabanas • Tiny Houses • Decks • Pergolados</p>
-<a href="https://wa.me/5511991468497" class="btn">Fale Conosco</a>
-</section>
-
-
-
-
-
-
-<section id="construcoes">
-<h2>Construções Sustentáveis</h2>
-<p>Chalés A-Frame, cabanas personalizadas e tiny houses  <p></p>decks, pergolados, varandas e estruturas sob medida
-</p>
-</section>
-
-
-
-
-
-<section id="ecossistema">
-<h2>Ecossistema Sustentiva</h2>
-<p>Um ciclo completo em madeira:
-projetos arquitetônicos, construção de chalés, hospedagem, cursos práticos e uma futura madeireira sustentável.</p>
-</section>
-
-
-
-
-
-<section id="contato">
-<h2>Contato</h2>
-<p>WhatsApp: <a href="https://wa.me/5511991468497" target="_blank">+55 (11) 99146-8497</a></p>
-<p>Email: sustentiva.eco@gmail.com</p>
- Instagram:
-  <a href="https://www.instagram.com/Sustentiva.eco/" target="_blank">
-    @Sustentiva.eco
-  </a>
-</p>
-</section>
-  
-
-<body>
-<img src="logo.png" alt="Sustentiva Eco Homes"
-     class="logo-watermark">
-
-<footer>
-<p>© Sustentiva Eco Homes</p>
-</footer>
-
-</body>
-</html>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    toggle.addEventListener('click', function () {
-      menu.classList.toggle('active');
-    });
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const logo = document.querySelector('.logo-watermark');
-    const footer = document.querySelector('footer');
-
-    function checkOverlap() {
-      const logoRect = logo.getBoundingClientRect();
-      const footerRect = footer.getBoundingClientRect();
-
-      if (
-        logoRect.bottom > footerRect.top &&
-        logoRect.top < footerRect.bottom &&
-        logoRect.right > footerRect.left &&
-        logoRect.left < footerRect.right
-      ) {
-        logo.style.filter = 'brightness(0) invert(1)';
-      } else {
-        logo.style.filter = 'none';
-      }
-    }
-
-    window.addEventListener('scroll', checkOverlap);
-    window.addEventListener('resize', checkOverlap);
-    checkOverlap();
-  });
-</script>
-
+    <header>
+        <nav>
+            <div class="logo">SUSTENTIVA <span>ECO HOMES</span></div>
+            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+            <ul class="menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#construcoes">Construções</a></li>
+                <li><a href="#ecossistema">Ecossistema</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="inicio" class="hero">
+        <h1>Construindo o futuro em madeira</h1>
+        <p>Chalés A-Frame • Cabanas • Tiny Houses • Decks • Pergolados</p>
+        <a href="https://wa.me/5511991468497" class="btn">Fale Conosco</a>
+    </section>
+    <section id="construcoes">
+        <h2>Construções Sustentáveis</h2>
+        <p>Chalés A-Frame, cabanas personalizadas e tiny houses, decks, pergolados, varandas e estruturas sob medida.</p>
+    </section>
+    <section id="ecossistema">
+        <h2>Ecossistema Sustentiva</h2>
+        <p>Um ciclo completo em madeira: projetos arquitetônicos, construção de chalés, hospedagem, cursos práticos e uma futura madeireira sustentável.</p>
+    </section>
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>WhatsApp: <a href="https://wa.me/5511991468497" target="_blank">+55 (11) 99146-8497</a></p>
+        <p>Email: sustentiva.eco@gmail.com</p>
+        <p>Instagram: <a href="https://www.instagram.com/Sustentiva.eco/" target="_blank">@Sustentiva.eco</a></p>
+    </section>
+    <footer>
+        <p>© Sustentiva Eco Homes</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
