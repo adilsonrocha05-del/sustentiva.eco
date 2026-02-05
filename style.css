@@ -61,7 +61,12 @@ nav {
 .menu {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 0px;
+    top: 100%; /* Ajusta o menu para ficar diretamente abaixo do nav */
+}
+
+.menu li {
+    margin: 0; /* Remove qualquer margem entre os itens do menu */
 }
 
 .menu li a {
