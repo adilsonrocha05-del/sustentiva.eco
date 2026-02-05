@@ -61,7 +61,7 @@ nav {
 .menu {
     list-style: none;
     display: flex;
-    gap: 0px;
+    gap: 30px;
     top: 100%; /* Ajusta o menu para ficar diretamente abaixo do nav */
 }
 
@@ -159,6 +159,13 @@ section p {
     background: #fff;
 }
 
+#contato {
+    background-color: #fff; /* Altere a cor de fundo para branco */
+    padding: 40px;
+    text-align: center;
+    border-top: none; /* Remove a linha de separação */
+}
+
 /* Footer */
 footer {
     background: var(--dark-bg);
@@ -187,6 +194,7 @@ footer {
 
     .menu.active {
         display: flex;
+        top: 100%; /* Ajusta o menu para ficar exatamente abaixo do nav */
     }
 
     .menu li {

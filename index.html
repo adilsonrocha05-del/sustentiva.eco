@@ -45,5 +45,11 @@
         <p>© Sustentiva Eco Homes</p>
     </footer>
     <script src="script.js"></script>
+    <script>
+        // Adiciona o ano atual dinamicamente no footer
+        const footer = document.querySelector('footer');
+        const year = new Date().getFullYear();
+        footer.innerHTML = `<p>© Sustentiva Eco Homes ${year}</p>`;
+    </script>
 </body>
 </html>
