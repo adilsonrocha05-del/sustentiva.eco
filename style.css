@@ -3,7 +3,7 @@
     --dark-bg: #111;
     --light-text: #fff;
     --dark-text: #333;
-    --body-bg: #f4f4f4;
+    --body-bg: #ffffff;
     --font-main: 'Montserrat', sans-serif;
 }
 
@@ -169,7 +169,7 @@ section p {
 /* Footer */
 footer {
     background: var(--dark-bg);
-    color: #aaa;
+    color: #ffffff;
     text-align: center;
     padding: 40px;
 }
