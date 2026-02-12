@@ -377,3 +377,31 @@ header.scrolled {
   background: rgba(0, 0, 0, 0.85);
   box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
+.whatsapp-fixo {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: white;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 9999;
+}
+.cta-final {
+  
+  color: rgba(0, 0, 0, 0.89);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.cta-final .btn {
+  margin-top: 20px;
+  display: inline-block;
+}
