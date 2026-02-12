@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <title>Sustentiva Eco Homes | Chalés Sustentáveis em Madeira em São Roque – SP</title>
+   <title>Sustentiva Eco Homes | Chalés e Cabanas Sustentáveis – SP</title>
 
-<meta name="description" content="Construção de chalés em madeira, cabanas e tiny houses sustentáveis em São Roque – SP. Projetos personalizados para moradia, investimento e hospedagem.">
+<meta name="description" content="Construção de chalés em madeira, cabanas e tiny houses sustentáveis. Projetos personalizados para moradia, investimento e hospedagem.">
 
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="favicon.png">
@@ -87,10 +87,9 @@
   <div class="catalogo">
 
     <div class="card-projeto">
-      <img src="rose.jpg"
-           alt="Chalé em madeira 12m² em São Roque SP">
-
-      <h3>Chalé em Madeira – 12m²</h3>
+      <img src="rose.jpg" onclick="abrirGaleria('chale1')" alt="Chalé em madeira 12m² em São Roque SP">
+      
+       <h3>Chalé em Madeira – 12m²</h3>
 
       <p>São Roque – SP</p>
 
@@ -101,7 +100,8 @@
 
     <!-- DUPLICA A PARTIR DAQUI -->
     <div class="card-projeto">
-      <img src="escritorio.jpeg" alt="Chalé sustentável em madeira 18m²">
+      <img src="escritorio.jpeg" onclick="abrirGaleria('chale2')"
+alt="Chalé sustentável em madeira 18m²">
       <h3>Chalé em Madeira – 18m²</h3>
       <p>Interior de SP</p>
       <a href="https://wa.me/5511991468497" class="btn">Ver detalhes</a>
@@ -216,10 +216,71 @@ window.addEventListener("DOMContentLoaded", function() {
       elemento.style.opacity = 1;
     }, 300);
 
-  }, 3000);
+  }, 1500);
 });
 </script>
 
+<script>
+let galerias = {
+  chale1: [
+    "rose.jpg",
+    "rose-interior.jpg",
+    "rose-planta.jpg",
+    "rose-deck.jpg"
+  ],
+
+  chale2: [
+    "escritorio.jpeg",
+    "escritorio-interno.jpeg",
+    "escritorio-planta.jpeg"
+    ],
+};
+
+let imagens = [];
+let indice = 0;
+
+function abrirGaleria(nome) {
+  imagens = galerias[nome];
+  indice = 0;
+  document.getElementById("modal").style.display = "block";
+  document.getElementById("imgAtual").src = imagens[indice];
+}
+
+function fecharGaleria() {
+  document.getElementById("modal").style.display = "none";
+}
+
+function proxima() {
+  indice = (indice + 1) % imagens.length;
+  document.getElementById("imgAtual").src = imagens[indice];
+}
+
+function anterior() {
+  indice = (indice - 1 + imagens.length) % imagens.length;
+  document.getElementById("imgAtual").src = imagens[indice];
+}
+</script>
+
+<!-- MODAL GALERIA -->
+<div id="modal" class="modal">
+  <span class="fechar" onclick="fecharGaleria()">&times;</span>
+  <img id="imgAtual" class="modal-img">
+  <div class="controles">
+    <button onclick="anterior()">❮</button>
+    <button onclick="proxima()">❯</button>
+  </div>
+</div>
+<script>
+window.addEventListener("scroll", function() {
+  const header = document.querySelector("header");
+
+  if (window.scrollY > 80) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+</script>
 
 </body>
 </html>
