@@ -223,7 +223,7 @@ footer {
 
 .logo-flutuante img {
   width: 66px;  /* tamanho */
-  opacity: 0.35;      /* transparência */
+  opacity: 0.80;      /* transparência */
   filter: none;       /* garante preto original */
   mix-blend-mode: normal;
   transition: opacity 0.3s ease;
@@ -332,45 +332,70 @@ footer {
   display: none;
   position: fixed;
   z-index: 9999;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  text-align: center;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .modal-img {
-  max-width: 90%;
-  max-height: 80vh;
-  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 85%;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.controles {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 60px;
+  pointer-events: none;
+}
+
+.controles button {
+  pointer-events: all;
+  background: rgba(34, 139, 34, 0.8); /* verde elegante */
+  border: none;
+  color: white;
+  font-size: 28px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+.controles button:hover {
+  background: #2ecc71;
+  transform: scale(1.1);
 }
 
 .fechar {
   position: absolute;
-  top: 20px;
+  top: 30px;
   right: 40px;
+  font-size: 35px;
   color: white;
-  font-size: 40px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.controles button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 40px;
-  margin: 20px;
-  cursor: pointer;
-}
-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  transition: 0.3s ease;
-  background: transparent;
+.fechar:hover {
+  color: #2ecc71;
 }
 
 header.scrolled {
@@ -404,4 +429,77 @@ header.scrolled {
 .cta-final .btn {
   margin-top: 20px;
   display: inline-block;
+}
+#ecossistema {
+  background: #f4f4f4; /* sai do branco puro */
+  padding: 80px 20px;
+}
+
+.ecosistema-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+
+.eco-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.eco-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.eco-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.eco-card h3 {
+  padding: 20px 20px 10px;
+  font-size: 20px;
+}
+
+.eco-card p {
+  padding: 0 20px 20px;
+  color: #555;
+}
+#construcoes {
+  padding: 80px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.subtitulo {
+  margin-top: 10px;
+  color: #666;
+}
+
+.servicos {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.servico {
+  background: #f5f5f5;
+  padding: 30px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.servico:hover {
+  transform: translateY(-8px);
+  background: #eaf7ef;
 }

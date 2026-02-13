@@ -35,9 +35,8 @@
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#construcoes">Construções</a></li>
                 <li><a href="#ecossistema">Ecossistema</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#portfolio">Catálogo</a></li>
-
+                                               <li><a href="#portfolio">Catálogo</a></li>
+ <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -50,20 +49,64 @@
   </div>
 </section>
 
-        <section id="construcoes">
-            <h2>Construções Sustentáveis</h2>
-            <p>Chalés A-Frame, cabanas personalizadas e tiny houses, decks, pergolados, varandas e estruturas sob medida.</p>
-        </section>
-        <section id="ecossistema">
-            <h2>Ecossistema Sustentiva</h2>
-            <p>Um ciclo completo em madeira: projetos arquitetônicos, construção de chalés, hospedagem, cursos práticos e uma futura madeireira sustentável.</p>
-        </section>
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>WhatsApp: <a href="https://wa.me/5511991468497" target="_blank">+55 (11) 99146-8497</a></p>
-            <p>Email: sustentiva.eco@gmail.com</p>
-            <p>Instagram: <a href="https://www.instagram.com/Sustentiva.eco/" target="_blank">@Sustentiva.eco</a></p>
-        </section>
+<section id="construcoes">
+  <h2>Construções Sustentáveis</h2>
+  <p class="subtitulo">
+    Projetos inteligentes em madeira para morar, investir ou hospedar.
+  </p>
+
+  <div class="servicos">
+
+    <div class="servico">
+      <h3>🏡 Chalés A-Frame</h3>
+      <p>Design moderno, alto potencial de rentabilidade e conforto térmico natural.</p>
+    </div>
+
+    <div class="servico">
+      <h3>🏠 Tiny Houses</h3>
+      <p>Compactas, funcionais e ideais para terrenos menores ou renda com locação.</p>
+    </div>
+
+    <div class="servico">
+      <h3>🌿 Estruturas Sob Medida</h3>
+      <p>Decks, pergolados, varandas e soluções personalizadas em madeira tratada.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="ecossistema">
+  <h2>Ecossistema Sustentiva</h2>
+  <p>
+    Um ciclo completo em madeira: projetos arquitetônicos, construção de chalés,
+    hospedagem, cursos práticos e uma futura madeireira sustentável.
+  </p>
+
+  <div class="ecosistema-galeria">
+
+    <div class="eco-card">
+      <img src="img/projeto.jpg" alt="Projeto de chalé em madeira">
+      <h3>Projeto Arquitetônico</h3>
+      <p>Planejamento inteligente, conforto térmico e estética natural.</p>
+    </div>
+
+    <div class="eco-card">
+      <img src="img/construcao.jpg" alt="Construção de chalé em madeira">
+      <h3>Construção Sustentável</h3>
+      <p>Mão de obra especializada e madeira tratada de alta durabilidade.</p>
+    </div>
+
+    <div class="eco-card">
+      <img src="img/hospedagem.jpg" alt="Hospedagem em chalé sustentável">
+      <h3>Hospedagem</h3>
+      <p>Viva a experiência Sustentiva em meio à natureza e ao conforto da madeira.</p>
+    </div>
+
+    
+  </div>
+</section>
+
+         
 
 
         <section class="autoridade">
@@ -72,22 +115,19 @@
     <div>🌲 Madeira tratada e durável</div>
     <div>🛠 Estrutura reforçada</div>
     <div>♻ Construção sustentável</div>
-    <div>📍 Atendimento em São Roque e região</div>
-    <div>💬 Suporte direto comigo</div>
-  
-    </div>
+       <div>💬 Suporte direto </div>
+      </div>
 <section class="cta-final">
   <h2>Pronto para construir seu refúgio</h2>
   <p>Fale conosco e receba uma proposta personalizada.</p>
   <a href="https://wa.me/5511991468497" class="btn">Solicitar Orçamento</a>
 </section>
   <p class="depoimento">
-    ⭐ Clientes satisfeitos que recomendam a Sustentiva para amigos e familiares pela qualidade, confiança e compromisso em cada projeto.
-  </p>
+    ⭐ depoimento de cliente satisfeito: "A Sustentiva transformou nosso sonho em realidade.
 </section>
 
         <section id="portfolio">
-  <h2>teste Projetos Realizados</h2>
+  <h2>Projetos Realizados</h2>
 
   <div class="catalogo">
 
@@ -114,14 +154,14 @@ alt="Chalé sustentável em madeira 18m²">
 
     <!-- DUPLICA A PARTIR DAQUI -->
     <div class="card-projeto">
-      <img src="tiny.jpeg" alt="Chalé sustentável em madeira 18m²">
+      <img src="tiny.jpeg" onclick="abrirGaleria('chale3')" alt="Chalé sustentável em madeira 18m²">
       <h3>tiny house – 25m²</h3>
       <p>Sao RoqueSP</p>
       <a href="https://wa.me/5511991468497" class="btn">Ver detalhes</a>
     </div>
  <!-- DUPLICA A PARTIR DAQUI -->
     <div class="card-projeto">
-      <img src="fundo ramos.jpeg" alt="Chalé sustentável em madeira 18m²">
+      <img src="fundo ramos.jpeg" onclick="abrirGaleria('chale4')" alt="Chalé sustentável em madeira 18m²">
       <h3>Chalé A-frame – 55m²</h3>
       <p>Ibiuna SP</p>
       <a href="https://wa.me/5511991468497" class="btn">Ver detalhes</a>
@@ -130,21 +170,27 @@ alt="Chalé sustentável em madeira 18m²">
 
      <!-- DUPLICA A PARTIR DAQUI -->
     <div class="card-projeto">
-      <img src="ecoflutua.jpeg" alt="Chalé sustentável em madeira 18m²">
-      <h3>Chalé em Madeira – 14m²</h3>
+      <img src="ecoflutua.jpeg" onclick="abrirGaleria('chale5')" alt="Chalé sustentável em madeira 18m²">
+      <h3>ecoflutua – 14m²</h3>
       <p>Interior de SP</p>
       <a href="https://wa.me/5511991468497" class="btn">Ver detalhes</a>
     </div>
 
 <!-- DUPLICA A PARTIR DAQUI -->
     <div class="card-projeto">
-      <img src="samurai.jpeg" alt="Chalé sustentável em madeira 18m²">
+      <img src="samurai.jpeg"  onclick="abrirGaleria('chale6')" alt="Chalé sustentável em madeira 18m²">
       <h3>Cabana Samurai – 37m²</h3>
       <p>Sao Roque SP</p>
       <a href="https://wa.me/5511991468497" class="btn">Ver detalhes</a>
     </div>
 
-
+ </section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>WhatsApp: <a href="https://wa.me/5511991468497" target="_blank">+55 (11) 99146-8497</a></p>
+            <p>  Email: <a href="mailto:sustentiva.eco@gmail.com">sustentiva.eco@gmail.com</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/Sustentiva.eco/" target="_blank">@Sustentiva.eco</a></p>
+        </section>
 </section>
 
     </main>
@@ -221,25 +267,65 @@ window.addEventListener("DOMContentLoaded", function() {
       elemento.style.opacity = 1;
     }, 300);
 
-  }, 1500);
+  }, 2000);
 });
 </script>
 
 <script>
 let galerias = {
   chale1: [
-    "rose.jpg",
-    "rose-interior.jpg",
-    "rose-planta.jpg",
-    "rose-deck.jpg"
-  ],
-
+    "img/rose 11.jpeg",
+    "img/rose1.jpeg",
+    "img/rose2.jpeg",
+    "img/rose3.jpeg",
+"img/rose4.jpeg",
+"img/rose5.jpeg",
+    "img/rose6.jpeg",
+"img/rose7.jpeg",
+    "img/rose8.jpeg",
+"img/rose9.jpeg",
+   "img/rose10.jpeg",
+],
   chale2: [
     "escritorio.jpeg",
     "escritorio-interno.jpeg",
     "escritorio-planta.jpeg"
     ],
+
+chale3: [
+    
+
+    ],
+
+
+    chale4: [
+    
+
+    ],
+
+
+
+chale5: [
+   
+
+
+
+    ],
+
+
+
+chale6: [
+   
+
+
+
+    ],
+
+
+
 };
+
+
 
 let imagens = [];
 let indice = 0;
