@@ -73,7 +73,9 @@ function atualizarLogo() {
     logo.style.filter = brilho > 140 ? 'invert(0)' : 'invert(1)';
 }
 
-// Dados dos Projetos (Catálogo Personalizado)
+// ==========================================
+// DADOS DOS PROJETOS (Catálogo Detalhado)
+// ==========================================
 const projetosData = {
     chale1: {
         titulo: "Elementhal kit EcoCabanas",
@@ -132,38 +134,43 @@ function abrirModalProjeto(idProjeto) {
     const projeto = projetosData[idProjeto];
     if (!projeto) return;
 
-    // Preenche os dados de texto
-    document.getElementById("modal-titulo").textContent = projeto.titulo;
-    document.getElementById("modal-local").textContent = projeto.local;
-    document.getElementById("modal-descricao").textContent = projeto.descricao;
+    const modalTitulo = document.getElementById("modal-titulo");
+    if (modalTitulo) modalTitulo.textContent = projeto.titulo;
     
-    // Injeta as especificações (lista)
+    const modalLocal = document.getElementById("modal-local");
+    if (modalLocal) modalLocal.textContent = projeto.local;
+    
+    const modalDescricao = document.getElementById("modal-descricao");
+    if (modalDescricao) modalDescricao.textContent = projeto.descricao;
+    
     const ulSpecs = document.getElementById("modal-especificacoes");
-    ulSpecs.innerHTML = "";
-    projeto.specs.forEach(spec => {
-        ulSpecs.innerHTML += `<li>${spec}</li>`;
-    });
+    if (ulSpecs) {
+        ulSpecs.innerHTML = "";
+        projeto.specs.forEach(spec => {
+            ulSpecs.innerHTML += `<li>${spec}</li>`;
+        });
+    }
 
-    // Configura o botão do WhatsApp com a mensagem específica
     const numWhats = "5511991468497";
     const btnWhats = document.getElementById("modal-btn-whatsapp");
-    btnWhats.href = `https://wa.me/${numWhats}?text=${encodeURIComponent(projeto.msgWa)}`;
+    if (btnWhats) btnWhats.href = `https://wa.me/${numWhats}?text=${encodeURIComponent(projeto.msgWa)}`;
 
-    // Configura a galeria de fotos
     fotosModalAtual = projeto.fotos;
     indiceFotoModal = 0;
-    document.getElementById("modal-img-destaque").src = fotosModalAtual[indiceFotoModal];
+    
+    const imgDestaque = document.getElementById("modal-img-destaque");
+    if (imgDestaque) imgDestaque.src = fotosModalAtual[indiceFotoModal];
 
-    // Oculta setas se houver apenas 1 foto
     const setas = document.querySelector(".modal-setas");
-    setas.style.display = fotosModalAtual.length > 1 ? "flex" : "none";
+    if (setas) setas.style.display = fotosModalAtual.length > 1 ? "flex" : "none";
 
-    // Mostra o modal
-    document.getElementById("modal-projeto").classList.add("ativo");
+    const modalProjeto = document.getElementById("modal-projeto");
+    if (modalProjeto) modalProjeto.classList.add("ativo");
 }
 
 function fecharModalProjeto() {
-    document.getElementById("modal-projeto").classList.remove("ativo");
+    const modalProjeto = document.getElementById("modal-projeto");
+    if (modalProjeto) modalProjeto.classList.remove("ativo");
 }
 
 function mudarFotoModal(direcao) {
@@ -171,50 +178,51 @@ function mudarFotoModal(direcao) {
     
     indiceFotoModal += direcao;
     
-    // Looping nas fotos
     if (indiceFotoModal < 0) {
         indiceFotoModal = fotosModalAtual.length - 1;
     } else if (indiceFotoModal >= fotosModalAtual.length) {
         indiceFotoModal = 0;
     }
     
-    document.getElementById("modal-img-destaque").src = fotosModalAtual[indiceFotoModal];
+    const imgDestaque = document.getElementById("modal-img-destaque");
+    if (imgDestaque) imgDestaque.src = fotosModalAtual[indiceFotoModal];
 }
 
-// Fechar ao clicar fora do conteúdo
-document.getElementById('modal-projeto').addEventListener('click', function(e) {
-    if (e.target === this) {
-        fecharModalProjeto();
-    }
-});
+// TRAVA DE SEGURANÇA APLICADA AQUI: Só adiciona o evento se o elemento existir no HTML
+const areaModalProjeto = document.getElementById('modal-projeto');
+if (areaModalProjeto) {
+    areaModalProjeto.addEventListener('click', function(e) {
+        if (e.target === this) {
+            fecharModalProjeto();
+        }
+    });
+}
 
-// Fechar com a tecla ESC
 document.addEventListener('keydown', function(e) {
     if (e.key === "Escape") fecharModalProjeto();
-});// Lógica do FAQ (Efeito Sanfona / Accordion)
+});
+
+// ==========================================
+// LÓGICA DO FAQ (Efeito Sanfona)
+// ==========================================
 const faqPerguntas = document.querySelectorAll(".faq-pergunta");
 
 faqPerguntas.forEach(pergunta => {
     pergunta.addEventListener("click", function() {
-        // Alterna a classe 'ativo' no botão clicado
         this.classList.toggle("ativo");
-
-        // Seleciona o elemento de resposta logo abaixo da pergunta
         const resposta = this.nextElementSibling;
 
-        // Se estiver aberto, fecha. Se estiver fechado, abre.
         if (resposta.style.maxHeight) {
             resposta.style.maxHeight = null;
         } else {
-            // (Opcional) Fecha as outras perguntas ao abrir uma nova
             faqPerguntas.forEach(outraPergunta => {
                 if (outraPergunta !== this) {
                     outraPergunta.classList.remove("ativo");
-                    outraPergunta.nextElementSibling.style.maxHeight = null;
+                    if(outraPergunta.nextElementSibling) {
+                        outraPergunta.nextElementSibling.style.maxHeight = null;
+                    }
                 }
             });
-
-            // Abre a resposta clicada baseada no tamanho do conteúdo
             resposta.style.maxHeight = resposta.scrollHeight + "px";
         }
     });
